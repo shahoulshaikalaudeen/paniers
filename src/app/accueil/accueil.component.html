@@ -1,0 +1,34 @@
+<div class="container">
+    <h3 class="d-flex justify-content-center">Produit Ordinateur</h3>
+
+    <div *ngFor="let ordinateur of product">
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+
+                <img class="palacevilliers" src="./assets/image/{{ordinateur.image}}">
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <dl>
+                    <dt>{{ ordinateur.produit }}</dt>
+
+                    <ul>
+                        <li>{{ ordinateur.description.processeur }}</li>
+                        <li> {{ ordinateur.description.ram }}</li>
+                        <li>{{ ordinateur.description.stockage }}</li>
+                        <li>{{ ordinateur.description.fonction}}</li>
+                    </ul>
+
+                </dl>
+
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <button class="btn btn-primary" (click)="Article(ordinateur)">Ajouter au Panier</button>
+            </div>
+            <ul>
+                <li *ngFor="let produits of bookList">{{ produits.produit }}</li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/accueil">
+        <img src="./assets/image/logo.png" alt="">
+    </a>
+    <div class="dropdown">
+
+
+
+        <span class=" val badge badge-light"> Mon Panier <img class="basket " src="./assets/image/basket.png"> {{nombre}}
+            articles</span>
+        <div class="dropdown-content" >
+            <div class="summary">
+                <div class="summary-total-items"><span class="total-items"></span>Panier :</div>
+                <div class="summary-subtotal">
+                  <div class="subtotal-title">Subtotal</div>
+               
+                  <div class="summary-promo hide">
+                    <div class="promo-title">Promotion</div>
+                    <div class="promo-value final-value" id="basket-promo"></div>
+                  </div>
+                </div>
+                <ul *ngFor="let ordinateur of produititem ">
+                  <li>{{ordinateur.produit}}</li><span class="total-value" >{{ordinateur.prix}} </span><br>
+               
+              </ul>
+               
+                <div class="summary-total">
+                  <div class="total-title">Total</div>
+                  <div class="total-value final-value" id="basket-total">{{total}}</div>
+                </div>
+                <div class="summary-checkout">
+                  <button class="checkout-cta" routerLink="/panier">Passer Commande</button>
+                
+                </div>
+              </div>
+       
+        </div>
+
+    </div>
+</nav>

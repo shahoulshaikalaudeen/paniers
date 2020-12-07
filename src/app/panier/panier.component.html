@@ -1,0 +1,51 @@
+<body>
+  <main>
+    <div class="basket">
+    
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+        </ul>
+      </div>
+      <div class="basket-product" *ngFor="let produit of produits">
+    
+        <div class="item">
+          <div class="product-image">
+            <img src="./assets/image/{{produit.image}}" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity">{{produit.id}}</span> {{produit.produit}}</strong> 
+          </h1>
+          <ul>
+            <li>{{ produit.description.processeur }}</li>
+            <li> {{ produit.description.ram }}</li>
+            <li>{{ produit.description.stockage }}</li>
+            <li>{{ produit.description.fonction}}</li>
+        </ul>
+          </div>
+        </div>
+        <div class="price">{{produit.prix}}</div>
+       
+
+        <div class="remove">
+          <button (click)="Remove(produit)">Remove</button>
+        </div>
+      </div>
+ <div *ngIf="paniernotif" class="alert alert alert-danger" role="alert"><strong>Panier Vide</strong> </div>
+    </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
+     
+  <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">{{to}}</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta">Go to Secure Checkout</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
