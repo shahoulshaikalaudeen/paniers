@@ -15,7 +15,7 @@ export class ProduitService {
   cookieValue: any;
 
 
-  constructor(private cookieService: CookieService) { this.Reload() }
+  constructor(private cookieService: CookieService) {  }
 
   Main = async () => {
     try {

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { ProduitService } from '../produit.service';
 import { async } from '@angular/core/testing';
 import { Subscription } from 'rxjs';
-
+import {loadStripe} from '@stripe/stripe-js';
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.component.html',
@@ -44,7 +44,7 @@ export class PanierComponent implements OnInit {
         this.panieremptysub = await this.produit.panier.subscribe(
           (paniers: boolean) => {
             this.paniernotif = paniers;
-         console.log(this.paniernotif);
+            console.log(this.paniernotif);
           })
         this.produit.Reload()
 
@@ -64,5 +64,7 @@ export class PanierComponent implements OnInit {
     this.panieremptysub.unsubscribe();
     this.subscription.unsubscribe();
   }
+ 
+
 }
 
