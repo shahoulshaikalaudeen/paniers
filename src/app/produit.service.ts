@@ -38,19 +38,19 @@ export class ProduitService {
   }
   Ajouter = (panier: any) => {
     this.items.push(panier);
-    this.cookieService.set('test', JSON.stringify(this.items));
+    localStorage.setItem('test', JSON.stringify(this.items));
     this.panierempty = false;
     this.Reload()
   }
   Supprimer = (produit: any) => {
     this.items = this.items.filter(x => x.id !== produit.id);
-    this.cookieService.set('test', JSON.stringify(this.items));
+    localStorage.setItem('test', JSON.stringify(this.items));
     if (this.items.length === 0)
       this.panierempty = true;
   }
 
   GetCookie = () => {
-    return of(JSON.parse(this.cookieService.get("test")));
+    return of(JSON.parse(localStorage.getItem("test")));
     this.Reload();
   }
 
