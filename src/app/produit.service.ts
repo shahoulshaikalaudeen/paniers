@@ -32,7 +32,7 @@ export class ProduitService {
   // fonction qui permet de recharger la valeur du subject qui met à jour et les envoi au abonnée subscribe au component//
   Reload = () => {
 
-    this.GetCookie().subscribe((value: any) => { this.item.next(value) })
+    this.GetLocalstorage().subscribe((value: any) => { this.item.next(value) })
 
     this.panier.next(this.panierempty);
   }
@@ -49,7 +49,7 @@ export class ProduitService {
       this.panierempty = true;
   }
 
-  GetCookie = () => {
+  GetLocalstorage = () => {
     return of(JSON.parse(localStorage.getItem("test")));
     this.Reload();
   }
